@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+
+<body>
+    <script>
+        let kay = {
+            first_name: "kay",
+            last_name: "lin",
+            age: 25,
+            is_marry: false,
+
+            // sayHi() {
+            //     document.write("hihihi", "<br>");
+            // },
+
+            //this指的是 正在執行sayHi()這個methods的物件 也就是kay
+            sayHi() {
+                document.write(this.first_name + " says hi", "<br>");
+            },
+
+            // walk() {
+            //     document.write("kay walk walk", "<br>");
+            // },
+            walk() {
+                document.write(this.first_name + " walk walk", "<br>");
+            },
+
+            // speak(words) {
+            //     document.write("kay says " + words, "<br>");
+            // }
+            speak(words) {
+                document.write(this.first_name + " says " + words, "<br>");
+            }
+
+        }
+        document.write(kay.age, "<br>");
+        document.write(kay["age"], "<br>");
+        kay.sayHi();
+        kay.walk();
+        kay.speak("阿囉哈");
+
+
+        // function hello(){
+        //     document.write("hello","<br>");
+        //     document.write(this);
+        // };
+        // hello();
+
+    </script>
+    <p>JS中的function array其實都是物件(object)的一種 -> 特殊物件</p>
+    <script>
+        let arr = [11, 22, 33];
+        document.write("typeof arr: ",typeof arr, "<br>");// object
+
+        function hello() {
+            document.write("hello", "<br>");
+        };
+        hello();
+        document.write("typeof hello: ",typeof hello, "<br>");//function
+    </script>
+</body>
+
+</html>

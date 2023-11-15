@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array push() pop() shift() unshift()</title>
+</head>
+
+<body>
+    <h2>push()</h2>
+    <script>
+        let classroom = ["101", "102", "103", "104"];
+        let returnValue = classroom.push("201");
+        document.write("classroom: ", classroom, "<br>");
+        document.write("returnValue: ", returnValue);
+    </script>
+    <h2>pop()</h2>
+    <script>
+        let name = ["tim", "bin", "lin"];
+        name.pop();
+        document.write(name);
+    </script>
+    <h2>shift()</h2>
+    <script>
+        let cats = ["do", "re", "me"];
+        let myCat = cats.shift();
+        document.write("cats: ", cats, "<br>");
+        document.write("myCat: ", myCat);
+    </script>
+    <h2>unshift()</h2>
+    <script>
+        let cats2 = ["do", "re", "me"];
+        let myCat2 = cats2.unshift("fa");
+        document.write("cats2: ", cats2, "<br>");
+        document.write("myCat2: ", myCat2);
+    </script>
+    <h2>array of array</h2>
+    <script>
+        let myArray = [
+            ["name", "age", "height"],
+            ["kay", "25", "160"],
+            ["bay", "24", "170"]
+        ];
+
+        document.write(myArray[1][0]);
+    </script>
+</body>
+
+</html>
