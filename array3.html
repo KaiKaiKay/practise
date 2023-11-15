@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陣列</title>
+</head>
+
+<body>
+    <script>
+        let friends = [11, 22, 33, 44, 55];
+        let another = friends; //[11, 22, 33, 44, 55]
+        //friends[0]=111;
+        another[0] = 222;
+        document.write("friends: ",friends, "<br>");
+        document.write("another: ",another, "<br>");
+    </script>
+    <hr>
+    <script>
+    let deposite=500;
+    let anotherdeposite=deposite; //500
+    anotherdeposite=600;
+    document.write("deposite: ",deposite, "<br>");
+    document.write("anotherdeposite: ",anotherdeposite);
+
+    </script>
+    <hr>
+    primitive data type:複製值，兩個值在RAM裡面的存取位置不同，被複製的值不會影響原陣列
+    <br>
+    reference data type:複製資料，兩個資料在RAM裡面的存取位置相同，被複製的值會影響原陣列
+
+</body>
+
+</html>
