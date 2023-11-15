@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="sum.js"></script>
+    <title>function練習</title>
+</head>
+
+<body>
+    <script>
+        var subtotal = 0; total = 0;
+
+        //客戶一 消費金額
+        subtotal = sum(10, 20);
+        total = total + subtotal;
+        document.write("客戶一消費金額:", subtotal, "<br>");
+        //客戶二 消費金額
+        subtotal = sum(100, 200, 300);
+        total = total + subtotal;
+        document.write("客戶二消費金額:", subtotal, "<br>");
+        //販賣總額
+        document.write("販賣總額:", total, "<br>");
+    </script>
+</body>
+
+</html>

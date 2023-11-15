@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函數</title>
+</head>
+
+<body>
+    <h2>全域函數</h2>
+    <script>
+        var str = "var a=10; var b=20;document.write('a+b',a+b,'<br>');";
+        document.write(str);
+    </script>
+    <h2>全域函數 eval() 將字串中的資料當作敘述來執行</h2>
+    <script>
+        var str = "var a=10; var b=20;document.write('a+b=',a+b,'<br>');";
+        eval(str);
+    </script>
+    <h2>全域函數 isNaN()</h2>
+    <script>
+        var age = "26"; //是數值性的資料
+        document.write("不是數值性資料嗎?", isNaN(age), "<br>"); //反邏輯
+        var name = "abc"; //不是數值性的資料
+        document.write("不是數值性資料嗎?", isNaN(name)); //反邏輯
+    </script>
+    <h2>全域變數 區域變數</h2>
+    使用var情況下▼
+    <br>
+    全域變數:使用var宣告在"函式外面" <br>
+    區域變數:使用var宣告在"函式裡面"<br>
+    範例：<br>
+    <p>
+        var a = 10; //全域變數 <br>
+        function a1() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;var a1 = 20;&nbsp//區域變數<br>
+        };<br>
+    </p>
+    不使用var情況下▼
+    <br>
+    寫在函式內外都是<p style="display: inline;color: red;">"全域變數"</p><br>
+    範例：<br>
+    <p>
+        a=10;//全域變數<br>
+        function a1() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;a1 = 20;&nbsp//全域變數<br>
+        };<br>
+    </p>
+</body>
+
+</html>

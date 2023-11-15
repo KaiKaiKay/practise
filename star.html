@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>印出*</title>
+</head>
+
+<body>
+    <h2>印出* i行要有i個*</h2>
+    <script>
+        let n = 10;
+        for (i = 1; i <= n; i++) {
+            let string = ''
+            for (j = 1; j <= i; j++) {
+                string += '*';
+            }
+            document.write(string,"<br>");
+        };
+        
+    </script>
+
+    <h2>印出金字塔</h2>
+    <h3>
+        <ul>
+            <li>一共有n層</li>
+            <li>第i層會有2i-1個星星</li>
+            <li>星星置中</li>
+            <li>需要n-1個空白</li>
+        </ul>
+    </h3>
+    <script>
+        let m = 5; // 金字塔的層數
+
+for (let i = 1; i <= m; i++) {
+
+
+
+    // 在每一行前印出空格，使金字塔居中
+    for (let j = 1; j <= m - i; j++) {
+        document.write('&nbsp;'); // 使用 &nbsp; 代表空格
+    }
+
+    // 在每一行印出對應數量的星號
+    for (let k = 1; k <= 2 * i - 1; k++) {
+        document.write('*');
+    }
+
+    document.write('<br>'); // 換行
+}
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>switch句型</h2>
+    <script>
+        lowtype = "2";
+        switch (lowtype) {
+            case "1":
+                amt = 5000;
+                break;
+            case "2":
+                amt = 3000;
+                break;
+            case "3":
+                amt = 1000;
+                break;
+            default: //可省略 不一定要寫
+                amt = 0;
+        };
+        document.write("補助款:", amt, "元");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攝氏轉華氏溫度</title>
+</head>
+
+<body>
+    <!-- <script>
+        function temperature(cel){
+            let fah=cel*1.8+32;
+            document.write(fah);
+        };
+
+        temperature(30);
+    </script> -->
+
+    <script>
+        function change(c) {
+            return c * 1.8 + 32;
+        };
+
+        //prompt()跳窗 prompt()得到的值是string 所以要轉成Number
+        // let input = prompt("請輸入溫度(°C):");
+        // input = Number(input);
+        let input=Number(prompt("請輸入溫度(°C):"));
+        //▼將輸入變數的值 提供給change()函數
+        let result = change(input);
+        alert("換算後的溫度為:" + result + "°F");
+    </script>
+</body>
+
+</html>

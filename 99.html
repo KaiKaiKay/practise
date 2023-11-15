@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99乘法表</title>
+</head>
+
+<body>
+    <h2>99乘法表</h2>
+    <script>
+        for (i = 1; i <= 9; i++) {
+            for (j = 1; j <= 9; j++) {
+                document.write(i, "*", j, "=", i * j, " ");
+            }
+            document.write("<br>");
+        };
+    </script>
+    <br>
+    <h2>99乘法表2</h2>
+    <script>
+        //產生k*1-k*9
+        function printTable(k) {
+            for (i = 1; i <= 9; i++) {
+                document.write(k, "*", i, "=", k * i, " ");
+            }
+        };
+
+        //產生1-9
+        for(k=1;k<=9;k++){
+            printTable(k);
+            document.write("<br>");
+        };
+    </script>
+</body>
+
+</html>

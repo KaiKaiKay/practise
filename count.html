@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>算術運算</h2>
+    <script>
+        document.write("5+2=", 5 + 2, "<br>");
+        document.write("5-2=", 5 - 2, "<br>");
+        document.write("5*2=", 5 * 2, "<br>");
+        document.write("5/2=", 5 / 2, "<br>");
+        document.write("5%2=", 5 % 2, "<br>");
+    </script>
+    <h2>字串運算</h2>
+    <script>
+        var yy = "1997";
+        var mm = "10";
+        var dd = "02";
+        var Bday = yy + mm + dd;
+        document.write("生日:", Bday, "<br>");
+    </script>
+    <h2>比較運算:結果是布林值 常用做決策依據</h2>
+    <script>
+        document.write("5>5?:", 5 > 5, "<br>");
+        document.write("5>=5?:", 5 >= 5, "<br>");
+        document.write("0==false?:", 0 == false, "<br>"); //值相等
+        document.write("0===false?:", 0 === false, "<br>"); //型值相等 左:number 右:布林
+        document.write("5!=10?:", 5 != 10, "<br>");
+    </script>
+    <h2>邏輯運算:結果是布林值 常用做決策依據</h2>
+    <script>
+        document.write("10<100&&10>5?:", 10 < 100 && 10 > 5, "<br>");
+        document.write("10>100||10>5?:", 10 > 100 || 10 > 5, "<br>");
+        document.write("!true?:", !true, "<br>");
+    </script>
+    <h2>指定運算</h2>
+    <script>
+        var x;
+        x = 2 + 3;
+        x += 100;
+        //x = x+100;
+        document.write("x:", x, "<br>");
+
+        var y;
+        y = 4 + 5;
+        y *= 100;
+        //y = y*100;
+        document.write("y:", y, "<br>");
+
+        var z;
+        z = 8;
+        z /= 4;
+        //z = z / 4;
+        document.write("z:", z, "<br>");
+    </script>
+    <h2>三元運算</h2>
+    語法：條件運算式? 成立顯示值a:不成立顯示值b <br>
+    <script>
+        var avg = 50;
+        document.write("考試結果:", "分數:", avg + "分，", avg >= 60 ? "及格" : "不及格", "<br>");
+    </script>
+    <h2>typeof運算:取得運算元的資料型別</h2>
+    <script>
+        document.write("typeof 12:", typeof 12, "<br>");
+        document.write("typeof '12':", typeof '12', "<br>");
+        document.write("typeof true:", typeof true, "<br>");
+        document.write("typeof undefined:", typeof undefined, "<br>");
+        document.write("typeof null:", typeof null, "<br>");
+    </script>
+
+</body>
+
+</html>

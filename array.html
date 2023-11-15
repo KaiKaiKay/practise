@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一維陣列</title>
+</head>
+
+<body>
+    <h2>陣列1</h2>
+    <script>
+        let ary = new Array(5);
+        document.write(ary[0], "<br>");
+        //沒給值 undefined
+    </script>
+    <h2>陣列2</h2>
+    <script>
+        let ary2 = new Array(11, 22, 33, 44);
+        document.write(ary2[0], "<br>");
+        document.write(ary2[3], "<br>");
+    </script>
+    <h2>陣列3</h2>
+    <script>
+        let ary3 = new Array(11, 22, 33, 44);
+        ary3[4] = 100; //超額使用
+        // document.write(ary3[0], "<br>");
+        // document.write(ary3[3], "<br>");
+        // document.write(ary3[4], "<br>");
+        for (i = 0; i <= 4; i++) {
+            document.write(ary3[i], "<br>");
+        };
+    </script>
+    <h2>一維陣列:個別指定</h2>
+    <script>
+        let ary4 = new Array(10, 20, 30);
+        let ary5 = new Array();
+        ary5[0] = ary4[0];
+        ary5[1] = ary4[1];
+        ary5[2] = ary4[2];
+        for (let k = 0; k < 3; k++)
+            document.write(ary5[k], "<br>");
+    </script>
+    <h2>一維陣列:個別指定 迴圈</h2>
+    <script>
+        let ary6 = new Array(10, 20, 30);
+        let ary7 = new Array();
+        for (i = 0; i < 3; i++) {
+            ary7[i] = ary6[i];
+            document.write(ary7[i], "<br>");
+        };
+    </script>
+
+    <h2>一維陣列:整體陣列的操作</h2>
+    <script>
+        let ary8 = new Array(10, 20, 30);
+        let ary9 = new Array();
+        ary9 = ary8 //直接指定拷貝
+        for (i = 0; i < 3; i++) {
+            document.write(ary9[i], "<br>");
+        };
+    </script>
+</body>
+
+</html>

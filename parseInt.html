@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    總價 <input type="text" id="subtotal" value="200" name="subtotal"><br>
+    <h2>錯誤▼</h2>
+    <script>
+        var subtotal = document.getElementById("subtotal").value; //抓取 id 為 subtotal 的 value 值
+        var fee = 50;
+        var total = subtotal + fee;
+        document.write("總價:", subtotal, "<br>");
+        document.write("處理費用:", fee, "<br>");
+        document.write("應付總額:", total, "<br>"); //會變成字串相加
+    </script>
+    <h2>正確▼</h2>
+    <script>
+        var subtotal = parseInt(document.getElementById("subtotal").value); //parseInt() 將輸入的字串轉成整數
+        var fee = 50;
+        var total = subtotal + fee;
+        document.write("總價:", subtotal, "<br>");
+        document.write("處理費用:", fee, "<br>");
+        document.write("應付總額:", total, "<br>"); // 整數相加
+    </script>
+
+    <h2>說明：parseInt(string, radix)</h2>
+    string → 資料，待轉成數字的字串<br>
+    radix → 基底，進位<br>
+    <script>
+        var subtotal = document.getElementById("subtotal").value;
+        document.write("總價：", parseInt(subtotal), "<br>");
+        document.write("總價(16進位)：", parseInt(subtotal, 16), "<br>");
+        document.write("總價(8進位)：", parseInt(subtotal, 8), "<br>");
+        document.write("總價(2進位)：", parseInt(subtotal, 2), "<br>"); //不是一個數字 NaN
+    </script>
+</body>
+
+</html>

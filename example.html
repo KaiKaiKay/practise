@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>多重迴圈: 1 2 3 4 5 6 7 8 9 印9次 方法一</h2>
+    <script>
+        for (i = 1; i <= 9; i++) {
+            document.write("1 2 3 4 5 6 7 8 9<br>");
+        }
+    </script>
+    <h2>多重迴圈: 1 2 3 4 5 6 7 8 9 印9次 方法二</h2>
+    <script>
+        for (i = 1; i <= 9; i++) {
+            for (j = 1; j <= 9; j++) {
+                document.write(j + "&nbsp")
+            }
+            document.write("<br>")
+        }
+    </script>
+    <h2>多重迴圈: 99乘法表</h2>
+    <script>
+        for (i = 1; i <= 9; i++) {
+            for (j = 1; j <= 9; j++) {
+                //document.write(i*j+ "&nbsp")
+                document.write(i + "*" + j + "=" + (i * j) + "&nbsp;")
+            }
+            document.write("<br>")
+        }
+    </script>
+
+    <h2>九九乘法表</h2>
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+        </tr>
+        <script>
+            for (i = 1; i <= 9; i++) {
+                document.write("<tr>");
+                document.write("<th>" + i + "</th>");
+                for (j = 1; j <= 9; j++) {
+                    document.write("<td>" + i + "*" + j + "=" + (i * j) + "</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+
+    <h2>4x4 表格</h2>
+    <table border="1">
+        <script>
+            for (let i = 1; i <= 5; i++) {
+                document.write("<tr>");
+                for (let j = 1; j <= 4; j++) {
+                    document.write("<td>行" + i + " 列" + j + "</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+
+    <h2>10*10</h2>
+    <script>
+        for(i=1;i<=10;i++){
+            for(j=1;j<=10;j++){
+                document.write((i * j) + "&nbsp;");
+            };
+            document.write("<br>");
+        };
+    </script>
+
+</body>
+
+</html>
