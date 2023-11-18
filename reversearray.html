@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反轉陣列</title>
+</head>
+
+<body>
+    <h2>反轉陣列</h2>
+    <script>
+        const friends = ["Harry", "Ron", "Snap", "Mike", "Grace"];
+        const reversed_friends = [];
+
+        for (i = friends.length - 1; i >= 0; i--) {
+            reversed_friends.push(friends[i]);
+        };
+        document.write(reversed_friends);
+        </script>
+        <h2>反轉陣列 解法2 內建函式</h2>
+        <script>
+            const friends2 = ["Harry", "Ron", "Snap", "Mike", "Grace"];
+            let reversed_friends2 = [];
+            reversed_friends2=friends2.reverse();
+            document.write(reversed_friends2);
+        </script>
+    <h2>找出最大值</h2>
+    <script>
+        function findBiggest(arr) {
+            if (arr == []) {
+                return undefined;
+            };
+            let biggestNumber = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                if (biggestNumber < arr[i]) {
+                    biggestNumber = arr[i];
+                }
+            }
+            document.write(biggestNumber);
+            return biggestNumber;
+        }
+
+        findBiggest([1, 2, 3, 4, 5, 999]);
+    </script>
+    <h2>加總數值解答</h2>
+    <script>
+        function addUpTo(n) {
+            let result = 0;
+            for (i = 1; i <= n; i++) {
+                result += i;
+            }
+            document.write(result);
+            return result;
+        }
+
+        addUpTo(100); // 15
+
+    </script>
+</body>
+
+</html>
