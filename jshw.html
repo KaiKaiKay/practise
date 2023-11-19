@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本練習題</title>
+</head>
+
+<body>
+    <h2>1.編寫一個名為“printEvery3()”的函式，它打印出等差數列 1, 4, 7, …, 88。</h2>
+    <script>
+        function printEvery3(n) {
+            for (let i = 1; i <= n; i += 3) {
+                document.write(i, "<br>");
+            }
+        }
+        printEvery3(88);
+    </script>
+    <h2>2.編寫一個名為table9to9的函式，它打印出九九乘法表的內容。</h2>
+    <script>
+        function table9to9(n) {
+            for (i = 1; i <= n; i++) {
+                for (j = 1; j <= n; j++) {
+                    document.write(j, "*", i, "=", j * i, " ")
+                }
+                document.write("<br>")
+            }
+        };
+        table9to9(9);
+    </script>
+    <h2>3.編寫一個名為isUpperCase的函式，唯一的參數是一個String，其功能為來檢查參數中String的第一個字母是否為大寫。</h2>
+    <script>
+        function isUpperCase(str) {
+            let n = str[0];
+            if (n >= "A" && n <= "Z") {
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+        console.log(isUpperCase("aBCD"));
+    </script>
+    <h2>4.編寫一個名為isAllUpperCase的函式，唯一的參數是一個String，其功能為來檢查參數中String的所有字母是否為大寫。</h2>
+    <script>
+        function isAllUpperCase(str2) {
+            for (let i = 0; i <= str2.length - 1; i++) {
+                if (!(str2[i] >= "A" && str2[i] <= "Z")) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(isAllUpperCase("ABCD")); 
+    </script>
+    <h2>5.編寫一個名為position的函式，唯一的參數是一個String，其功能為找到參數String當中的第一個大寫字母，並且回傳大寫字母的值以及其index位置。</h2>
+    <script>
+        function position(str3) {
+            for (let i = 0; i <= str3.length - 1; i++) {
+                if (str3[i]>="A"&&str3[i]<="Z") {
+                console.log(i);
+                break;
+                }
+            }
+        }
+        console.log("第一個大寫位置在: ",i);
+        position("abcDe")
+    </script>
+</body>
+
+</html>
