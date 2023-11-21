@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本練習題2</title>
+</head>
+
+<body>
+    <h2>1.編寫一個名為reverse的函式，參數為一個String，回傳值為順序反轉的String。</h2>
+    <script>
+        function reverse(String) {
+            let newString = "";
+            for (let i = String.length - 1; i >= 0; i--) {
+                newString += String[i];
+            };
+            document.write(newString, "<br>");
+        };
+
+        reverse("abcd"); // returns "dcba"
+        reverse("I am a good guy."); // returns ".yug doog a ma I"
+    </script>
+    <h2>1.方法2 對稱</h2>
+    <script>
+        function reverse2(str) {
+            let newString2 = "";
+            for (let i = 0; i <= str.length - 1; i++) {
+                newString2 += str[str.length - 1 - i];
+            };
+            document.write(newString2, "<br>");
+        };
+        reverse2("kuobaba");
+    </script>
+    <h2>2.編寫一個名為swap的函式，參數為一個String，回傳值為大小寫反轉的String。</h2>
+    <script>
+        function swap(String) {
+            let newString = "";
+            for (let i = 0; i < String.length; i++) {
+                if (String[i] >= "A" && String[i] <= "Z") {
+                    newString += String[i].toUpperCase();
+                } else if (String[i] >= "a" && String[i] <= "z") {
+                    newString += String[i].toLowerCase();
+                } else {
+                    newString += String[i]; // 如果不是字，保留原樣
+                };
+            };
+            document.write(newString, "<br>");
+        };
+        swap("Aloha");
+        swap("Love you."); 
+    </script>
+    <h2>3.編寫一個名為isPrime的函式，它接受一個整數作為參數，回傳值為一個boolean，告訴我們參數是否為一個質數。</h2>
+    <script>
+        function isPrime(n) {
+            if (n == 1) {
+                console.log(false);
+                return false
+            };
+            let starter = 2;
+            while (starter < n) {
+                if (n % starter == 0) {
+                    console.log(false);
+                    return false
+                }
+                starter++;
+            }
+            console.log(true);
+            return true;
+
+        };
+        isPrime(1); // returns false
+        isPrime(2);// returns true
+        isPrime(5); // returns true
+        isPrime(91); // returns false
+        isPrime(1000000); // returns false
+    </script>
+</body>
+
+</html>
