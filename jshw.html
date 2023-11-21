@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>基本練習題</title>
+    <title>基本練習題1</title>
 </head>
 
 <body>
@@ -58,14 +58,115 @@
     <script>
         function position(str3) {
             for (let i = 0; i <= str3.length - 1; i++) {
-                if (str3[i]>="A"&&str3[i]<="Z") {
-                console.log(i);
-                break;
+                if (str3[i] >= "A" && str3[i] <= "Z") {
+                    console.log("第一個大寫: " + str3[i]);
+                    console.log("位置在: " + i);
+                    break;
+                } else {
+                    console.log("-1");
+                }
+            }
+
+        }
+        position("abCde");
+    </script>
+    <h2>5. 解法2</h2>
+    <script>
+        function position2(str) {
+            for (let i = 0; i <= str.length - 1; i++) {
+                if (str[i] == str[i].toUpperCase()) {
+                    console.log("第一個大寫: " + str[i] + "、位置在: " + i)
                 }
             }
         }
-        console.log("第一個大寫位置在: ",i);
-        position("abcDe")
+
+        position2("abCde");
+    </script>
+    <h2>6.編寫一個名為findSmallCount的函式，其參數為一個整數的array以及另一個整數，功能是回傳一個整數，來表示array中有多少元素小於第二個參數。</h2>
+    <script>
+        function findSmallCount(arr, n) {
+            let count = 0;
+            for (let i = 0; i <= arr.length; i++) {
+                if (arr[i] < n) {
+                    count++;
+                }
+            }
+            console.log(count);
+            return count;
+        };
+        findSmallCount([1, 2, 3], 2); //  1
+        findSmallCount([1, 2, 3, 4, 5], 0); //  0
+    </script>
+    <h2>7.編寫一個名為findSmallerTotal的函式，其參數為一個整數的array以及另一個整數，回傳值為array中小於第二個參數的所有元素的總和。</h2>
+    <script>
+        function findSmallerTotal(arr, n) {
+            let total = 0;
+            for (let i = 0; i <= arr.length; i++) {
+                if (arr[i] < n) {
+                    total += arr[i];
+                }
+            }
+            console.log(total);
+            return total;
+        };
+        findSmallerTotal([1, 2, 3], 3) //  3
+        findSmallerTotal([1, 2, 3], 1) //  0
+        findSmallerTotal([3, 2, 5, 8, 7], 999) //  25
+        findSmallerTotal([3, 2, 5, 8, 7], 0) //  0
+    </script>
+    <h2>8.編寫一個名為stars的函式，功能為按以下模式打印出星星層</h2>
+    <script>
+        function stars(n) {
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= i; j++) {
+                    document.write("*");
+                }
+                document.write("<br>")
+            }
+        }
+        stars(4);
+    </script>
+    <h2>9.編寫一個名為stars2的函式，功能為按以下模式打印出星星層(121 / 12321 / 1234321...)</h2>
+    <script>
+        function stars2(n) {
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= i; j++) {
+                    document.write("*");
+                }
+                document.write("<br>")
+            }
+            for (let d = n - 1; d >= 1; d--) {
+                for (c = d; c >= 1; c--) {
+                    document.write("*");
+                }
+                document.write("<br>")
+            }
+        }
+        stars2(4);
+    </script>
+    <h2>10.在數學上，費波那契數是以遞迴的方法來定義。首幾個費波那契數是：0、1、 1、 2、 3、 5、 8、 13、 21、 34、 55、 89、 144、 233、 377、 610、
+        987、…。編寫一個名為fib的函式，唯一的參數是個整數n，回傳值為斐波那契數列的第n項。</h2>
+    <script>
+        function fib(n) {
+            if (n == 0) {
+                console.log(0);
+                return 0;
+            } else if (n == 1) {
+                console.log(1);
+                return 1;
+            };
+            let fib_sequence = [0, 1];
+            while (fib_sequence.length <= n) {
+                let last_element = fib_sequence[fib_sequence.length - 1];
+                let second_last_element = fib_sequence[fib_sequence.length - 2];
+
+                fib_sequence.push(last_element + second_last_element)
+            }
+            //console.log(fib_sequence);
+            console.log(fib_sequence[fib_sequence.length - 1]);
+            return fib_sequence[fib_sequence.length - 1];
+        }
+        fib(8);
     </script>
 </body>
 
