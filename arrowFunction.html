@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭頭函示</title>
+</head>
+
+<body>
+    <h2>語法</h2>
+    <h3>1. () => expression</h3>
+    <h4>自動return</h4>
+    <h3>2. param => expression</h3>
+    <h4>自動return</h4>
+    <h3>3. (param1,param2) => expression</h3>
+    <h4>自動return</h4>
+    <h3>4. param => {return expression}</h3>
+    <h4>若加入 {} 不會自動return，除非有寫 return xxx</h4>
+    <hr>
+    <h2>範例1</h2>
+    <script>
+        let cat = () => {
+            document.write("郭巴巴是隻卯咪");
+        };
+        cat();
+    </script>
+    <h2>範例2</h2>
+    <script>
+        window.addEventListener("click", () => {
+            alert("94你點擊的！！！");
+        });
+    </script>
+    <h2>範例3 2個值</h2>
+    <script>
+        let addition = (a, b) => {
+            return a + b;
+        };
+        document.write(addition(6, 8));
+    </script>
+    <h2>範例4 0個值</h2>
+    <script>
+        let addition2 = () => {
+            return 10;
+        };
+        document.write(addition2());
+    </script>
+    <h2>範例5 1個值</h2>
+    <script>
+        //a的()可省略
+        let addition3 = (a) => {
+            return a;
+        };
+        document.write(addition3(7));
+    </script>
+    <hr>
+    <h2>3種寫法比較</h2>
+    <h3>第一種</h3>
+    <h4>箭頭函示沒有this keyword綁定</h4>
+    <h4>this 會是空物件{}</h4>
+    <h4>this.name 則會是undefined</h4>
+    <script>
+        let dog = {
+            name: "Ruby",
+            run: () => {
+                document.write(this.name + " is running");
+            },
+        };
+        dog.run();
+    </script>
+    <h3>第二種</h3>
+    <script>
+        let dog2 = {
+            name: "Ruby",
+            run() {
+                document.write(this.name + " is running");
+            },
+        };
+        dog2.run();
+    </script>
+    <h3>第三種</h3>
+    <script>
+        let dog3 = {
+            name: "Ruby",
+            run: function () {
+                document.write(this.name + " is running");
+            },
+        };
+        dog3.run();
+    </script>
+</body>
+
+</html>
