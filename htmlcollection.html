@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLCollection VS. NodeList</title>
+</head>
+
+<body>
+    <h2>getElementsByClassName → 是"動態"的HTMLAllCollection</h2>
+    <h2>querySelector →是"靜態"的NodeList</h2>
+    <h3>範例：</h3>
+    <p class="hello">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p class="hello">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    
+
+    <script>
+        let hellos = document.getElementsByClassName("hello");
+        let hellos2 = document.querySelectorAll(".hello");
+        console.log(hellos.length);//2
+        console.log(hellos2.length);//2
+
+        let body=document.querySelector("body");
+        let p=document.createElement("p");
+        p.innerText="this is a new p."
+        p.classList.add("hello");
+        body.appendChild(p);
+
+        console.log("改變DOM之後")
+        hellos2 = document.querySelectorAll(".hello"); //再找一次
+        console.log(hellos.length); //3
+        console.log(hellos2.length); //3
+    </script>
+    <p>如果沒有用 hellos2 = document.querySelectorAll(".hello") 再找一次，則console.log(hellos2.length); 會顯示2</p>
+</body>
+
+</html>
