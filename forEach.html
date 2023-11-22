@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach() method</title>
+</head>
+
+<body>
+    <h2>用for迴圈</h2>
+    <script>
+        let luckNum = [1, 2, 3, 4, 5, 6, 7];
+        for (let i = 0; i < luckNum.length; i++) {
+            luckNum[i] = luckNum[i] + 3;
+        };
+        document.write(luckNum);
+    </script>
+    <h2>用forEach()</h2>
+    <script>
+        let luckNum2 = [1, 2, 3, 4, 5, 6, 7];
+
+        function plus3(n) {
+            document.write(n + 3);
+        };
+
+        luckNum2.forEach(plus3);
+    </script>
+    <h2>用forEach() 2</h2>
+    <script>
+        let luckNum3 = [1, 2, 3, 4, 5, 6, 7];
+
+        luckNum3.forEach(function plus3(n) {
+            document.write(n + 3);
+        });
+    </script>
+    <h2>用forEach() 3</h2>
+    <script>
+        let luckNum4 = [1, 2, 3, 4, 5, 6, 7];
+
+        luckNum4.forEach((n)=> {
+            document.write(n + 3);
+        });
+    </script>
+    <h2>用forEach() 4</h2>
+    <script>
+        let luckNum5 = [1, 2, 3, 4, 5, 6, 7];
+
+        luckNum5.forEach((n,index)=> {
+            document.write(n+" is at index "+index+"<br>");
+        });
+    </script>
+</body>
+
+</html>
