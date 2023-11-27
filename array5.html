@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>進階 Array</title>
+</head>
+
+<body>
+    <h2>arr.map()</h2>
+    <script>
+        let language = ["java", "js", "c#", "c++"];
+        // let result=language.map(function(lang){
+        //     return lang.toUpperCase();
+        // });
+
+        // let result = language.map((lang) => {
+        //     return lang.toUpperCase();
+        // });
+
+        let result = language.map((lang) =>
+            lang.toUpperCase()
+        );
+        document.write(result);
+    </script>
+
+    <h2>arr.map() 2</h2>
+    <script>
+        const languages = [
+            { name: "Python", rating: 9.5, popularity: 9.7, trending: "super hot" },
+            { name: "Java", rating: 9.4, popularity: 8.5, trending: "hot" },
+            { name: "C++", rating: 9.2, popularity: 7.7, trending: "hot" },
+            { name: "PHP", rating: 9.0, popularity: 5.7, trending: "decreasing" },
+            { name: "JS", rating: 8.5, popularity: 8.7, trending: "hot" },
+        ];
+
+        let result2 = languages.map(lang => {
+            return lang.name.toUpperCase();
+        });
+
+        document.write(result2);
+    </script>
+
+    <h2>arr.find()</h2>
+    <script>
+        const languages2 = [
+            { name: "Python", rating: 9.5, popularity: 9.7, trending: "super hot" },
+            { name: "Java", rating: 9.4, popularity: 8.5, trending: "hot" },
+            { name: "C++", rating: 9.2, popularity: 7.7, trending: "hot" },
+            { name: "PHP", rating: 9.0, popularity: 5.7, trending: "decreasing" },
+            { name: "JS", rating: 8.5, popularity: 8.7, trending: "hot" },
+        ];
+
+        let result3 = languages2.find((lang) => {
+            return lang.popularity > 9.5;
+        });
+
+        console.log(result3);
+    </script>
+
+    <h2>arr.fliter() 過濾</h2>
+    <script>
+        let result4 = languages.filter(lang => {
+            return lang.rating >= 9.2;
+        });
+
+        console.log(result4);
+    </script>
+
+    <h2>arr.some()</h2>
+    <script>
+        let result5 =languages.some(lang => {
+            return lang.popularity<=6;
+        });
+
+        console.log(result5);
+    </script>
+
+    <h2>arr.every()</h2>
+    <script>
+        let result6=languages.every(lang=>{
+            return lang.popularity>5;
+        });
+
+        console.log(result6);
+    </script>
+</body>
+
+</html>
