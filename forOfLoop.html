@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for...of loop</title>
+</head>
+
+<body>
+    <h2>for...of loop 範例一</h2>
+    <script>
+        //寫法一
+        let num = [11, 22, 33];
+        for (i = 0; i < num.length; i++) {
+            console.log("寫法一 for迴圈: ", num[i]);
+        };
+
+        //寫法二
+        num.forEach(n => {
+            console.log("寫法二 forEach: ", n);
+        });
+
+        //寫法三
+        for (n of num) {
+            console.log("寫法三 for...of loop: ", n);
+        };
+    </script>
+    <h2>for...of loop 範例二</h2>
+    <script>
+        let myString = "kuobaba";
+        for (let n of myString) {
+            console.log(n);
+        };
+    </script>
+
+</body>
+
+</html>
