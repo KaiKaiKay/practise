@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for...in loop</title>
+</head>
+
+<body>
+    <h2>for...in loop 範例一</h2>
+    <h3>循環對象是"可枚舉屬性"</h3>
+    <h3>對於object來說，enumerable properties就是keys。</h3>
+    <h3>對於array來說，enumerable properties就是indices。</h3>
+    <h3>對於String來說，enumerable properties也是indices。</h3>
+
+    <h2>範例一 物件</h2>
+    <script>
+        //郭巴巴物件
+        let kuobaba = {
+            name: "kuoba",
+            age: 7,
+        };
+
+        //遍歷 kuobaba 物件的每個屬性 property
+        for (let property in kuobaba) {
+            //取得屬性名稱
+            console.log(property);
+            //取得屬性的值
+            console.log(kuobaba[property]);
+            //同時取得了屬性名稱和對應的值
+            console.log(property + ": " + kuobaba[property]);
+        }
+    </script>
+    <h2>範例二 陣列</h2>
+    <script>
+        let num = [11, 22, 33, 44, 55];
+        for (let i in num) {
+            //取得index
+            console.log(i);
+            //取值
+            console.log(num[i]);
+        }
+    </script>
+    <h2>範例三 字串</h2>
+
+</body>
+
+</html>
