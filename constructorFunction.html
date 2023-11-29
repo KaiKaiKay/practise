@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor function</title>
+</head>
+
+<body>
+    <h2>constructor function</h2>
+    <h3>在js語法中 如果function被調用時使用了new關鍵字 則function會被當成constructor function來使用</h3>
+    <h3>RAM會預留空間給新製作的物件{}</h3>
+    <h3>this指的是 新製作的物件{}</h3>
+    <h3>物件{}會自動被return</h3>
+    <script>
+        //js中 constructor function以大寫開頭
+        function Cat(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sayHi = function () {
+                console.log(this.name + " say hi !");
+            };
+            console.log(this); //Cat {name: 'kuobaba', age: 6} & Cat {name: 'rubyby', age: 14}
+        };
+        let kuobaba = new Cat("kuobaba", 6);
+        let rubyby = new Cat("rubyby", 14);
+        console.log(kuobaba);
+        console.log(rubyby);
+        kuobaba.sayHi();
+        rubyby.sayHi();
+        //reference data type
+        console.log(kuobaba.sayHi()==rubyby.sayHi()) //false 因為他們的記憶體位置不同
+    </script>
+</body>
+
+</html>
