@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>除錯</title>
+</head>
+
+<body>
+    <h2>除錯</h2>
+    <h3>在js中發生的錯誤 會自動被做成Error物件</h3>
+    <script>
+        try {
+            console.log("just test")
+            whatever();
+        } catch (e) {
+            if (e instanceof TypeError) {
+                console.log("發生TypeError");
+            } else if (e instanceof ReferenceError) {
+                console.log("發生ReferenceError");
+            } else if (e instanceof SyntaxError) {
+                console.log("發生SyntaxError");
+            } else {
+                console.log("發生其他種的Error");
+            }
+        } finally {
+            console.log("不管有無Error 都會被執行的程式碼");
+        };
+    </script>
+
+    <h2>舉例</h2>
+    <script>
+        openFile();
+        try {
+            writeFile();
+        } catch {
+            handlewriteFileError();
+        } finally {
+            //不管有無正確 都要關閉檔案
+            closeFile();
+        };
+    </script>
+</body>
+
+</html>
