@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phototype Inheritance in Constructors</title>
+</head>
+
+<body>
+    <h2>constructor function（構造函式）</h2>
+    <h3>說明：Constructor function（構造函式）是在 JavaScript 中用於創建和初始化新物件的函式。它們通常用來定義特定類型的物件，並為這些物件設定屬性和方法。當使用 new 關鍵字來調用構造函式時，它會返回一個新的實例對象。通常以"大寫"字母開頭。</h3>
+    <script>
+        function Cat(name, age) {
+            this.name = name;
+            this.age = age;
+        };
+
+        Cat.prototype.hello = function () {
+            console.log(this.name + " say hello!");
+        };
+
+        function fatCat(name, age, color, weight) {
+            Cat.call(this, name, age);
+            this.color = color;
+            this.weight = weight;
+        };
+
+        //所有A.prototype所額外設定的attributes與methods都需要寫在A.prototype=A.prototype(B.prototype)這行程式碼的下方
+        fatCat.prototype = Object.create(Cat.prototype);
+
+        fatCat.prototype.bodyColor = function () {
+            console.log(this.name + "is a " + this.color + " cat!");
+        };
+
+        let kuoba = new fatCat("kuoba", 7, "orange", 6);
+        document.write("kuoba.name: ", kuoba.name, "<br>");
+        document.write("kuoba.age: ", kuoba.age, "<br>");
+        document.write("kuoba.color: ", kuoba.color, "<br>");
+        document.write("kuoba.weight: ", kuoba.weight, "<br>");
+
+        kuoba.hello();
+        kuoba.bodyColor();
+    </script>
+</body>
+
+</html>
