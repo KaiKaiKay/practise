@@ -21,17 +21,86 @@
             this.sayHi = function () {
                 console.log(this.name + " say hi !");
             };
-            console.log(this); //Cat {name: 'kuobaba', age: 6} & Cat {name: 'rubyby', age: 14}
+            //console.log(this); //Cat {name: 'kuobaba', age: 6} & Cat {name: 'rubyby', age: 14}
         };
-        let kuobaba = new Cat("kuobaba", 6);
-        let rubyby = new Cat("rubyby", 14);
-        console.log(kuobaba);
-        console.log(rubyby);
-        kuobaba.sayHi();
-        rubyby.sayHi();
-        //reference data type
-        console.log(kuobaba.sayHi()==rubyby.sayHi()) //false 因為他們的記憶體位置不同
+        //console.log(Cat.prototype); //Object
+
+        Cat.prototype.type="卯咪";
+
+        Cat.prototype.hello=function (){
+            console.log(this.name + " say hello !");
+        };
+
+        let kuobaba = new Cat("kuobaba", 6); //kuobaba.__proto__ => Cat.prototype
+        let rubyby = new Cat("rubyby", 14); //rubyby.__proto__ => Cat.prototype
+        kuobaba.hello(); //kuobaba有繼承Cat.prototype
+        console.log(kuobaba.hello == rubyby.hello); //kuobaba跟rubyby的__proto__都會指向Cat.prototype 所以是true
+        console.log("kuobaba.type: ",kuobaba.type); //卯咪
+        console.log("rubyby.type: ",rubyby.type); //卯咪
+
+        //kuobaba 是 Cat 的一個實例（instance），因此 kuobaba.__proto__ 指向 Cat 的原型，因為 kuobaba 是由 Cat 函式創建的。這將返回 true，因為 Cat.prototype 也指向 Cat 的原型。
+        console.log(kuobaba.__proto__ == Cat.prototype);
+        console.log(rubyby.__proto__ == Cat.prototype);
+
+        // console.log(kuobaba);
+        // console.log(rubyby);
+        // kuobaba.sayHi();
+        // rubyby.sayHi();
+        // //reference data type
+        // console.log(kuobaba.sayHi()==rubyby.sayHi()) //false 因為他們的記憶體位置不同
     </script>
+    <hr>
+    <h4>
+        kuobaba.__proto__ 和 Cat.prototype 在 JavaScript 中都與原型（prototype）有關。
+    </h4>
+    <ul>kuobaba.__proto__:
+        <li>kuobaba 是一個 Cat 的實例（instance）。在 JavaScript 中，每個物件實例都有一個 __proto__ 屬性，指向它的原型（prototype）。</li>
+        <li>kuobaba.__proto__ 將指向 Cat 函式的原型，因為 kuobaba 是由 Cat 函式創建的。</li>
+    </ul>
+    <ul>Cat.prototype:
+        <li>在 JavaScript 中，每個函式（function）都有一個特殊的屬性 prototype，它是一個物件，用於定義該函式創建的所有實例共享的屬性和方法。</li>
+        <li>Cat.prototype 是 Cat 函式的原型。當您使用 new Cat() 創建一個新的 Cat 實例時，該實例的 __proto__ 屬性將指向 Cat.prototype。</li>
+    </ul>
+    <h4>簡單來說，kuobaba.__proto__ 是 kuobaba 實例的原型，而 Cat.prototype 是 Cat 函式的原型。這兩者都用於實現原型繼承，讓實例能夠繼承共享的屬性和方法。</h4>
+    <hr>
+
+    <h2>prototype & __proto__</h2>
+    <h3>prototype</h3>
+    <p>prototype 是函式（function）特有的屬性。當創建一個函式時，JavaScript 會自動為這個函式創建一個 prototype 屬性。這個 prototype
+        屬性是一個指向物件的引用，該物件包含可共享的屬性和方法，這些屬性和方法可以被該函式的所有實例繼承。</p>
+    <script>
+        function Person(name) {
+            this.name = name;
+        }
+
+        //Person.prototype 是一個包含 sayHello 方法的物件
+        Person.prototype.sayHello = function () {
+            console.log("Hello, " + this.name);
+        };
+
+        //創建 Person 的實例（person1）時，它可以訪問 Person.prototype 中定義的方法
+        var person1 = new Person("John");
+        person1.sayHello();  // 輸出: Hello, John
+
+    </script>
+    <h3>__proto__</h3>
+    <p>__proto__ 是每個 JavaScript 物件都有的隱式屬性，它指向該物件的原型。換句話說，__proto__ 是用來訪問物件的原型的一個屬性。然而，它不是標準的 JavaScript
+        作法，而是由瀏覽器廠商提供的非標準擴展。</p>
+    <script>
+        var person1 = {
+            name: "John"
+        };
+
+        var person2 = {};
+        // 讓person2 繼承 person1 的屬性。
+        person2.__proto__ = person1;
+
+        console.log(person2.name);  // 輸出: John
+    </script>
+
+    <h4>
+        prototype 是函式特有的屬性，而 __proto__ 是每個物件都有的屬性，用於訪問該物件的原型。在現代 JavaScript 中，更推薦使用 Object.getPrototypeOf() 來訪問原型。
+    </h4>
 </body>
 
 </html>
