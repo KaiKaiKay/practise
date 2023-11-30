@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class語法範例</title>
+</head>
+
+<body>
+    <h2>範例</h2>
+    <script>
+        class Circle {
+            //實例屬性 (instance property)
+            static allCircles=[];
+
+            constructor(radius) {
+                this.radius = radius;
+                //把圓放進allCircles[]
+                Circle.allCircles.push(this);
+            };
+
+            //實例方法 (instance method)
+            getArea() {
+                return Math.PI * this.radius * this.radius;
+            };
+
+            //實例方法 (instance method)
+            getPerimeter() {
+                return 2 * Math.PI * this.radius;
+            };
+
+            //靜態方法 (static method)
+            static getAreaFormula(){
+                return "圓面積公式為: PI * r * r "
+            };
+
+            //靜態方法 (static method)
+            static getAllCirclesAreaTotal(){
+                let total=0;
+                Circle.allCircles.forEach(circle=>{
+                    total+=circle.getArea();
+                });
+                return total;
+            };
+        };
+
+        let circle1 = new Circle(10);
+        let circle2 = new Circle(20);
+        let circle3 = new Circle(30);
+
+        console.log(circle1.getArea());
+        console.log(circle1.getPerimeter());
+        console.log(Circle.getAreaFormula());
+
+        //計算circle1 circle2 circle3 面積總和
+        console.log(Circle.getAllCirclesAreaTotal());
+    </script>
+</body>
+
+</html>
