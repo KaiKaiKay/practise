@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function 常用 methods</title>
+</head>
+
+<body>
+    <h2>function.bind(obj)</h2>
+    <h3>將function的this關鍵字綁定(bind)為obj</h3>
+    <script>
+        let kuoba = {
+            name: "kuoba",
+            age: 6
+        }
+
+        function getAge(country, weight) {
+            console.log(this.name + "來自" + country + ",體重為" + weight + "kg");
+            return this.age;
+        };
+
+        //綁定getAge跟kuoba
+        let newFunction = getAge.bind(kuoba);
+
+        console.log(newFunction());
+    </script>
+
+    <h2>function.call(obj,arg1/arg2/.../argN)</h2>
+    <h3>使用給定的obj當作this的值來調用函數。arg1/arg2/.../argN為optional</h3>
+    <script>
+        getAge.call(kuoba, "台灣", 6);
+    </script>
+
+    <h2>function.apply(obj,argsArray)</h2>
+    <h3>與call相同 但arguments是arguments array</h3>
+</body>
+<script>
+    getAge.apply(kuoba, ["台灣", 6]);
+</script>
+
+</html>
