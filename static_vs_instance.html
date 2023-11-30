@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>靜態屬性、方法 & 實例屬性、方法</title>
+</head>
+
+<body>
+    <h2>靜態屬性 (static property)：</h2>
+    <ul>
+        <li>定義： 與整個"類別"相關聯的屬性，而不是與類別的實例相關聯。</li>
+        <li>存取方式： 使用類別的名稱訪問。例如，ClassName.staticProperty。</li>
+        <li>用途： 保存和共享與整個類別相關的數據。
+        </li>
+    </ul>
+    <script>
+        class Example {
+            static staticProperty = "I am a static property.";
+        }
+
+        console.log(Example.staticProperty); // 輸出: I am a static property.
+    </script>
+
+
+    <h2>靜態方法 (static method)：</h2>
+    <ul>
+        <li>定義： 與整個"類別"相關聯的方法，而不是與類別的實例相關聯。
+        </li>
+        <li>存取方式： 使用類別的名稱訪問。例如，ClassName.staticMethod()。
+        </li>
+        <li>用途： 常用於執行與整個類別相關的操作，而不涉及特定實例的數據。
+        </li>
+    </ul>
+    <script>
+        class MathOperations {
+            // 靜態方法
+            static add(x, y) {
+                return x + y;
+            }
+        }
+
+        const result = MathOperations.add(5, 3);
+        console.log(result); // 輸出: 8
+    </script>
+
+
+    <h2>實例屬性 (instance property)：</h2>
+    <ul>
+        <li>定義： 與類別的"實例"相關聯的屬性。每個實例都有自己的一套實例屬性。
+        </li>
+        <li>存取方式： 使用類別的實例訪問。例如，instanceName.instanceProperty。
+        </li>
+        <li>用途： 用於存儲每個實例的特定數據。
+        </li>
+    </ul>
+    <script>
+        class Example {
+            constructor(value) {
+                this.instanceProperty = value;
+            }
+        }
+
+        const instance = new Example("I am an instance property.");
+        console.log(instance.instanceProperty); // 輸出: I am an instance property.
+    </script>
+
+
+    <h2>實例方法 (instance method)：</h2>
+    <ul>
+        <li>定義： 與類別的"實例"相關聯的方法。它可以訪問實例屬性，並且通常用於實現對實例數據的操作。
+        </li>
+        <li>存取方式： 使用類別的實例訪問。例如，instanceName.instanceMethod()。
+        </li>
+        <li>用途： 用於執行與實例相關的操作。
+        </li>
+    </ul>
+    <script>
+        class Example {
+            constructor(value) {
+                this.instanceProperty = value;
+            }
+
+            instanceMethod() {
+                console.log("I am an instance method. Value:", this.instanceProperty);
+            }
+        }
+
+        const instance2 = new Example("Example Value");
+        instance2.instanceMethod(); // 輸出: I am an instance method. Value: Example Value
+    </script>
+
+
+    <hr>
+    <h2>總結:靜態屬性和方法是與整個類別相關的，而實例屬性和方法是與每個實例相關的。</h2>
+</body>
+
+</html>
