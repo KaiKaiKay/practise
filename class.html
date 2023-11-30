@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class語法</title>
+</head>
+
+<body>
+    <h2>class語法</h2>
+    <h3>class語法是JS基於現有的prototype inheritance的語法糖</h3>
+    <h3>class跟constructor function語法可以完全互換</h3>
+    <h3>class語法更簡潔</h3>
+    <h3>Static關鍵字在class(constructor function的一種)上定義attributes與methods</h3>
+    <h3>Static關鍵字所設定的attributes與methods屬於class本身。不屬於每個由class所製作出來的物件 => Static關鍵字就是將attributes與methods設定在constructor
+        function物件上</h3>
+
+    <h2>兩者寫法對比</h2>
+    <script>
+        //constructor function ▼
+        // function Student(name, age, major) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.major = major;
+        // };
+
+        // Student.prototype.hi = function () {
+        //     console.log(this.name + "say hihi!");
+        // };
+
+
+        //改成class語法 ▼
+        // class Student {
+        //     constructor(name, age, major) {
+        //         this.name = name;
+        //         this.age = age;
+        //         this.major = major;
+        //     };
+
+        //     hi(){
+        //         console.log(this.name + "say hihi!");
+        //     }
+        // }
+    </script>
+
+    <h2>範例1</h2>
+    <!-- <script>
+        class Cat {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            };
+
+            hello() {
+                console.log(this.name + " say hello!");
+            };
+        };
+
+        //讓fatCat繼承Cat
+        class fatCat extends Cat {
+            constructor(name, age, color, weight) {
+                //super代表的是Cat的constructor function
+                super(name, age);
+                this.color = color;
+                this.weight = weight;
+            };
+
+            bodyColor() {
+                console.log(this.name + "is a " + this.color + " cat!");
+            };
+        };
+
+        let kuoba = new fatCat("kuoba", 7, "orange", 6);
+        kuoba.hello();
+        kuoba.bodyColor();
+
+    </script> -->
+    <h2>範例2</h2>
+    <script>
+        // function Dog(name, age, weight) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.weight = weight;
+        // };
+
+
+        // Dog.exampleProperty = 10;
+        // //▼ 直接在Dog物件上設定exampleFunction
+        // Dog.exampleFunction = function () {
+        //     console.log("Just test.")
+        // };
+
+        // //▼ 在Dog的prototype屬性上設定sayHi()
+        // Dog.prototype.sayHi = function () {
+        //     console.log(this.name + " say hihi!!!");
+        // };
+
+        // Dog.exampleFunction();
+        // console.log(Dog.exampleProperty);
+
+        // let ruby = new Dog("Ruby", 14, 9);
+        // //ruby.exampleFunction(); //ruby.exampleFunction is not a function
+
+
+        //class寫法 (物件導向)
+        class Dog {
+
+            //設定給class
+            static exampleProperty = 10; //靜態屬性static property
+
+
+            constructor(name, age, weight) {
+                //name, age, weight 為Dog class製作出來的物件 屬於instance property
+                this.name = name; //實例屬性instance property
+                this.age = age; //實例屬性instance property
+                this.weight = weight; //實例屬性instance property
+            };
+
+            //sayHi()屬於 實例方法instance method
+            sayHi() {
+                console.log(this.name + " say hihi!!!");
+            };
+
+            //exampleFunction()屬於 靜態方法static method
+            static exampleFunction() {
+                console.log("Just test.");
+            };
+        };
+
+        let ruby = new Dog("Ruby", 14, 9);
+        //ruby.exampleFunction(); //ruby.exampleFunction is not a function
+        Dog.exampleFunction();
+
+    </script>
+</body>
+
+</html>
