@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment語法</title>
+</head>
+
+<body>
+    <h2>Destructuring Assignment語法</h2>
+    <h3>可以將array中的值或object中的屬性unpack到不同的變量中</h3>
+    <h3>語法一: const [a, b] = array;</h3>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7];
+        let [a1, a2, a3, a4, a5, a6, a7] = arr;
+        console.log("a5 is ", a5);
+    </script>
+
+    <h3>語法二: const [a, b, ...rest] = array;</h3>
+    <script>
+
+        let arr2 = [1, 2, 3, 4, 5, 6, 7];
+        let [a11, a22, ...everything] = arr2;
+        console.log(a11, a22, everything);
+        //everything指的是剩下的[]
+    </script>
+    <h3>★★★語法三: const { a, b } = obj;</h3>
+    <script>
+        let kuoba = {
+            name: "kuoba",
+            age: 7,
+            weight: 5.74,
+            color: "orange"
+        };
+
+        //找到物件kuoba裡面的屬性weight後，再用變數weight儲存屬性weight裡面的值
+        //也就是把物件kuoba裡的屬性weight 解構出來了
+        let { weight } = kuoba;
+        let { age, color } = kuoba;
+
+        console.log(weight);
+        console.log(weight, age, color);
+    </script>
+
+    <h3>範例</h3>
+    <script>
+    let { email, password }=req.body;
+    </script>
+
+</body>
+
+</html>
