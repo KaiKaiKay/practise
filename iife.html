@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+</head>
+
+<body>
+    <h2>IIFE</h2>
+    <h3>是一個js函數 他在定義後會立即運行</h3>
+    <h3>常見於 library source code</h3>
+    <h3>當想要避免汙染global naming space，或是想要立即執行某個匿名函式時，就可以使用</h3>
+    <h3>語法:(function(){})();</h3>
+    <h4>前面的(): function expression</h4>
+    <h4>後面的(): invoke function -> 立即執行</h4>
+    <script>
+        //(function(){})();
+
+        //一般寫法
+        // function hello(){
+        //     console.log("hello")
+        // };
+        // hello();
+
+
+        //IIFE
+        // (function hello() {
+        //     console.log("hello")
+        // })();
+
+        // (function () {
+        //     console.log("hello")
+        // })();
+
+        (() => {
+            console.log("hello")
+        })();
+    </script>
+</body>
+
+</html>
